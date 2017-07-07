@@ -1,13 +1,9 @@
 #!/usr/bin/env python3
 
-try:
-    import matplotlib
-
-    matplotlib.use('Agg')
-    import matplotlib.pyplot as plt
-    import matplotlib.gridspec as gridspec
-except ImportError:
-    pass
+import matplotlib
+matplotlib.use('Agg')
+import matplotlib.pyplot as plt
+import matplotlib.gridspec as gridspec
 
 import argparse
 
@@ -25,8 +21,6 @@ img_size = (28, 28)
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--gpu', '-g', type=int, default=0, help='GPU ID')
-parser.add_argument('--out', '-o', default='result',
-                    help='Directory to output the result')
 parser.add_argument('--unit', '-u', type=int, default=1000,
                     help='Number of units')
 parser.add_argument('--model', default='model/mlp_iter_12000',
